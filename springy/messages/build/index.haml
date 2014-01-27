@@ -1,0 +1,24 @@
+!!! 5
+%html
+	%head
+		%meta{:charset => "utf-8"}/
+		%link{:rel => "stylesheet", :href=> "css/main.css"}/
+		%script{:src => "http://code.jquery.com/jquery-2.0.3.min.js"}
+		%script{:src => "js/springyMessages.js"}
+		%title Springy Messages
+
+%body
+	#messages
+		- (1..5).each do |i|
+			.message.me Lorem ipsum dolor sit amet
+			.message.friend Aenean sed arcu imperdiet
+			.message.friend Sed eleifend blandit ante vitae fermentum
+			.message.me In auctor pulvinar metus id eleifend. Donec eu.
+			.message.me Lorem ipsum dolor sit amet
+	:javascript
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-41079194-1', 'juan.me');
+		ga('send', 'pageview');

@@ -1,0 +1,4 @@
+@include keyframes (spin) {
+	from { @include transform(translate(-50%, -50%) rotate(0deg)); }
+	to { @include transform(translate(-50%, -50%) rotate(360deg)); }
+}

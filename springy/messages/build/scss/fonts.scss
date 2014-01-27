@@ -1,0 +1,11 @@
+$vanitas_regular: "Vanitas-Regular";
+$whitney_bookregular: "Whitney SSm A", "Whitney SSm B";
+$verlag_condensed: "Verlag Cond A", "Verlag Cond B";
+
+@font-face {
+    font-family: $vanitas_regular;
+    src: url('fonts/28D8A2_0_0.eot');
+    src: url('fonts/28D8A2_0_0.eot?#iefix') format('embedded-opentype'),
+         url('fonts/28D8A2_0_0.woff') format('woff'),
+         url('fonts/28D8A2_0_0.ttf') format('truetype');
+}

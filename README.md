@@ -1,4 +1,2 @@
-demos
-=====
-
-Prototypes and demos used in code.juan.me
+Prototypes and Demos used in code.juan.me
+=========================================

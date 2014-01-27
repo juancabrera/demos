@@ -1,0 +1,44 @@
+@import "normalize.scss";
+@import "mixins.scss";
+
+body {
+	&.no-pointers-events {
+		pointer-events: none;
+	}
+}
+
+#messages {
+	width: 640px;
+	position: relative;
+	margin: auto;
+	font: lighter 28px/40px Helvetica;
+	padding: 20px 20px 0 20px;
+	overflow: hidden;
+
+	&.fixed {
+		position: fixed;
+		left: 50%;
+		@include transform(translateX(-50%));
+		overflow: none;
+	}
+
+	.message {
+		margin-bottom: 20px;
+		display: inline-block;
+		padding: 15px 20px 15px 20px;
+		@include border_radius(40px);
+
+		&.friend {
+			background: #e5e5ea;
+			float: left;
+			margin-right: 100px;
+			color: black;
+		}
+		&.me {
+			background: #4bbbfb;
+			float: right;
+			margin-left: 100px;
+			color: white;
+		}
+	}
+}

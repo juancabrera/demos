@@ -1,0 +1,181 @@
+@import "normalize.scss";
+@import "mixins.scss";
+@import "keyframes.scss";
+@import "variables.scss";
+@import "fonts.scss";
+
+body {
+	&.no-pointers-events {
+		pointer-events: none;
+	}
+}
+
+#loader {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: white;
+	z-index: 9;
+	@include transition($speedTransition, opacity);
+	@include opacity(1);
+
+	&.h {
+		@include opacity(0);
+	}
+
+	.spining {
+		@include loader(26px, black, white, 5px, 1.1s);
+	}
+}
+
+#mainContainer {
+	@include transition($speedLoadSite, opacity, ease-in-out);
+	@include opacity(1);
+	overflow: hidden;
+
+	&.h {
+		@include opacity(0);
+	}
+
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: $heightHeader;
+		background: white;
+		z-index: 8;
+		margin-top: 0;
+		@include transition($speedTransitionScroll, opacity, linear, $speedTransitionScroll);
+		@include opacity(1);
+		border-bottom: 1px $borderGridColor solid;
+
+
+		&.hide {
+			@include transition($speedTransitionScroll, all, ease-out, $speedTransitionScroll);
+			@include transform(translateY(-100%));
+			@include opacity(0);
+		}
+
+		a.logo {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include transform(translate(-50%, -50%));
+			width: 250px;
+			height: 60px;
+			background: url(../images/logo.png) no-repeat center center;
+			background-size: 100%;
+		}
+	}
+
+	nav {
+		position: fixed;
+		width: 120px;
+		top: 0;
+		bottom: 0;
+		z-index: 8;
+		background: white;
+		@include transition($speedTransitionScroll, opacity, linear, $speedTransitionScroll * 2);
+		@include opacity(1);
+		padding-top: $heightHeader;
+
+		a {
+			display: block;
+			padding: 10px;
+			color: black;
+		}
+
+		&.left {
+			left: 0;
+
+			a {
+				text-align: center;
+			}
+
+			&.hide {
+				@include transition($speedTransitionScroll, all, ease-out);
+				@include transform(translateX(-100%));
+				@include opacity(0);
+			}
+		}
+		&.right {
+			right: 0;
+
+			a {
+				text-align: center;
+			}
+
+			&.hide {
+				@include transition($speedTransitionScroll, all, ease-out);
+				@include transform(translateX(100%));
+				@include opacity(0);
+			}
+		}
+	}
+
+	#superGrid {
+		position: relative;
+		background: white;
+		width: $widthGridCell * 3;
+		height: 100%;
+		padding-top: $heightHeader;
+		z-index: 7;
+		overflow: hidden;
+		margin: auto;
+		@include transform(translateZ(0));
+
+		&.fixed {
+			position: fixed;
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+
+		&.no-border {
+			.gridCell:after {
+				@include transition($speedTransitionScroll, opacity, ease-out);
+				@include opacity(0);
+			}
+		}
+
+		.gridCell {
+			position: relative;
+			width: $widthGridCell;
+			height: $heightGridCell;
+			float: left;
+			overflow: hidden;
+
+			// &:after {
+			// 	content: ' ';
+			// 	position: absolute;
+			// 	display: block;
+			// 	top: 0;
+			// 	right: 0;
+			// 	bottom: 0;
+			// 	left: 0;
+			// 	// width: 1px;
+			// 	border-bottom: 1px $borderGridColor solid;
+			// 	border-right: 1px $borderGridColor solid;
+			// 	@include transition($speedTransitionScroll, opacity, linear, $speedTransitionScroll);
+			// 	@include opacity(1);
+			// 	z-index: 2;
+			// }
+
+			&:hover {
+				img {
+					@include opacity(0.9);			
+				}
+			}
+
+			img {
+				float: left;
+				width: $widthGridCell;
+				height: $heightGridCell;
+				@include transition($speedTransitionScroll, opacity, ease-out);
+			}
+		}
+	}
+}

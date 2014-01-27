@@ -1,0 +1,49 @@
+@import "normalize.scss";
+@import "mixins.scss";
+@import "fonts.scss";
+
+body {
+	&.no-pointers-events {
+		pointer-events: none;
+	}
+}
+
+#box {
+	.i {
+		width: 20px;
+		height: 20px;
+		background: green;
+		left: 45%;
+		position: fixed;
+		@include transform(translate(-50%, -50%));		
+
+		&.a {
+			top: 50px;
+		}
+		&.b {
+			top: 90px;
+		}
+		&.c {
+			top: 130px;
+		}
+		&.d {
+			top: 170px;
+		}
+		&.e {
+			top: 210px;
+		}
+		&.f {
+			top: 250px;
+		}
+	}
+}
+
+#box2 {
+	width: 20px;
+	height: 20px;
+	background: gray;
+	top: 50px;
+	left: 55%;
+	position: fixed;
+	@include transform(translate(-50%, -50%));
+}
